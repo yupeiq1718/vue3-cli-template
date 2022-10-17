@@ -10,5 +10,6 @@ module.exports = {
         prependData: '@import "~@/assets/styles/index.css";'
       }
     }
-  }
+  },
+  lintOnSave: false
 }
