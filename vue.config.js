@@ -1,6 +1,8 @@
 /* eslint-disable */
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
 
 const resolve = dir => {
   return path.join(__dirname, dir)
@@ -64,5 +66,41 @@ module.exports = {
           })
         ]
       }
+  },
+  configureWebpack: {
+    plugins: [
+      AutoImport({
+        include: [
+          /\.[tj]sx?$/,
+          /\.vue$/, /\.vue\?vue/,
+          /\.md$/
+        ],
+        imports: [
+          'vue',
+          'vue-router',
+          {
+            axios: [
+              ['default', 'axios']
+            ]
+          }
+        ],
+        dirs: [
+
+        ],
+        dts: './auto-imports.d.ts',
+        vueTemplate: false,
+        resolvers: [
+
+        ],
+        eslintrc: {
+          enabled: true,
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true
+        }
+      }),
+      Components({
+        dts: true
+      })
+    ]
   }
 }

@@ -21,3 +21,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# auto-import
+.eslintrc-auto-import.json
+components.d.ts
