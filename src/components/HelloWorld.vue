@@ -1,3 +1,12 @@
+<script setup lang="ts">
+interface Props {
+  msg: string
+}
+
+const props = defineProps<Props>()
+
+</script>
+
 <template>
   <div class="hello">
     <h1>{{ props.msg }}</h1>
@@ -119,15 +128,6 @@
     </ul>
   </div>
 </template>
-
-<script setup lang="ts">
-interface Props {
-  msg: string
-}
-
-const props = defineProps<Props>()
-
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
