@@ -1,5 +1,5 @@
 const useIcon = () => {
-  const requireAll = (requireContext:any) => {
+  const requireAll = (requireContext: __WebpackModuleApi.RequireContext) => {
     console.log(requireContext)
     requireContext.keys().map(requireContext)
   }
