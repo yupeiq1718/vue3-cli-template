@@ -26,14 +26,7 @@
       "scripthost"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "**/*.d.ts"
-  ],
+  "include": ["./src/**/*.{ts,tsx,vue,d.ts}", "./auto-imports.d.ts", "./components.d.ts"],
   "exclude": [
     "node_modules"
   ]
